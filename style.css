@@ -1,0 +1,76 @@
+/* Fonts */
+@font-face {
+  font-family: Shabnam;
+  src: url('/font/Shabnam.woff') format('woff');
+}
+
+/* Root */
+html {
+  font-family: Shabnam;
+  background-color: var(--bg-body);
+}
+
+:root {
+  --bg-body: snow;
+  --text-body: black;
+  --text-product: white;
+  --bg-product-body: green;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Product */
+.product_Card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--text-product);
+}
+
+.product_Card img {
+  height: 300px;
+}
+
+.product_Body {
+  background-color: var(--bg-product-body);
+  width: 95%;
+  margin: auto;
+}
+
+.product_Body::before,
+.product_Body::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg-product-body);
+  top: -3px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.product_Body::before {
+  transform: rotate(60deg);
+  right: -3px;
+}
+
+.product_Body::after {
+  transform: rotate(-60deg);
+  left: -3px;
+}
